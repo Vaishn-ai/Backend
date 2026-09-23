@@ -12,6 +12,7 @@ class product_apiview(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = 'pk'  
+    permission_classes = [IsAuthenticated]
 
 class productvarient_apiview(ModelViewSet):
     queryset = ProductVarient.objects.all()
@@ -32,4 +33,3 @@ class Subcategory_apiview(ModelViewSet):
     queryset = SubCategory.objects.all()
     serializer_class = SubCategorySerializer
     lookup_field = 'pk'
-    
